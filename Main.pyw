@@ -101,7 +101,14 @@ def carregarAgenda():
         messagebox.showerror(title="Planilha Selecionada Incompatível",message="A planilha selecionada está fora dos padrões desejáveis, revise a planilha e deixe a nos padrões de execução do sistema. \nRevise os CABEÇALHOS, PLANILHA E PASTA DE TRABALHO selecionados.\nCaso não encontre erros comunique ao desenvolvedor")
         pass
 
-def threading(plan,treeV):     
+def threading(plan,treeV):   
+    #desabilitando botões e itens para ususário não pder alterar a planilha durante sua operação
+    botaoEscolherAgenda['state']=DISABLED
+    botaoCarregarAgenda['state']=DISABLED
+    entry_SheetName['state']=DISABLED
+    botaoIniciarDesp['state']=DISABLED
+
+    #IMPEDINDO QUE A OPERAÇÃO TRAVE A JANELA
     t1=Thread(target=lambda: agendar(plan,treeV)) 
     t1.start() 
 
