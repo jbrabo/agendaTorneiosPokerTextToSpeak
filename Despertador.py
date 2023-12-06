@@ -81,7 +81,6 @@ def agendar(tabela,treeV):
                         #CASO NÃO PASSOU A HORA, NEM PASSOU OS MINUTOS
                         #ELE CONTINUA DENTRO DO WHILE E RETORNA PRO INICIO DO TESTE
                         sleep(5)
-                        continue
                         
                     else:
                         
